@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+
+   <button onclick="
+        
+      playGame('Rock');
+   ">Rock</button>
+   <button onclick="
+   
+    playGame('Paper');
+   ">Paper</button>
+   <button onclick="
+   
+    playGame('Scissors');
+   ">Scissors</button>
+
+   <script>
+
+     function playGame(myChoice)
+      {
+         const computerChoise = pickComputerChoice();
+
+         if (myChoice === 'Rock') {
+            if (computerChoise === 'Rock') {
+               alert(`Your choise:${myChoice}.Computer Choice:${computerChoise}. Tie`);
+            } else if (computerChoise === 'Paper') {
+               alert(`Your choise:${myChoice}.Computer Choice:${computerChoise}. You Loose`);
+            } else if (computerChoise === 'Scissors') {
+               alert(`Your choise:${myChoice}.Computer Choice:${computerChoise}. You Win`);
+            }
+         } else if (myChoice === 'Paper') {
+            if (computerChoise === 'Paper') {
+               alert(`Your choise:${myChoice}.Computer Choice:${computerChoise}. Tie`);
+            } else if (computerChoise === 'Rock') {
+               alert(`Your choise:${myChoice}.Computer Choice:${computerChoise}. You Win`);
+            } else if (computerChoise === 'Scissors') {
+               alert(`Your choise:${myChoice}.Computer Choice:${computerChoise}. You Loose`);
+            }
+         } else if (myChoice === 'Scissors') {
+            if (computerChoise === 'Scissors') {
+               alert(`Your choise:${myChoice}.Computer Choice:${computerChoise}. Tie`);
+            } else if (computerChoise === 'Paper') {
+               alert(`Your choise:${myChoice}.Computer Choice:${computerChoise}. You Win`);
+            } else if (computerChoise === 'Rock') {
+               alert(`Your choise:${myChoice}.Computer Choice:${computerChoise}. You Loose`);
+            }
+         }
+
+      }
+
+    function  pickComputerChoice()
+      {
+
+         const computerNumber = Math.random();
+
+         let computerChoise = '';
+
+         if (computerNumber >= 0 && computerNumber < 1 / 3) {
+            computerChoise = 'Rock';
+         } else if (computerNumber > 1 / 3 && computerNumber < 2 / 3) {
+            computerChoise = 'Paper';
+         } else if (computerNumber > 2 / 3 && computerNumber <= 3 / 3) {
+            computerChoise = 'Scissors';
+         }
+         return computerChoise;
+      }
+
+   </script>
+
+</body>
+
+</html>
