@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DOM Project</title>
+</head>
+<body>
+  
+    <p>YouTube Subscribe Button</p>
+    <button class="js-subscribe" onclick="
+    const subScribeButtonElement = document.querySelector('.js-subscribe');
+      if(subScribeButtonElement.innerText === 'Subscribe'){
+        subScribeButtonElement.innerHTML = 'Subscribed'
+      }else{
+        subScribeButtonElement.innerHTML = 'Subscribe'
+      }
+    
+  ">Subscribe</button>
+    <br><br><br>
+    <p>Rock Paper Sccissors</p>
+    <p><a href="rock-paper-scissors.html" style="text-decoration: underline;">Click here</a></p><br>
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping</p>
+    <p>Orders over $40 = FREE shipping</p>
+    <input class="js-input-number" placeholder="Cost of order">
+    <button class="js-calculate" onclick="
+    
+    calculateShippingAmount();
+    
+    
+    ">Calculate</button>
+    <br>
+    <p class="js-result"></p>
+    <br><br><br>  
+    <p><a href="rock-paper-scissors.html" style="text-decoration: underline;">CSS version of this decoration</a></p><br>
+
+
+  <script>
+
+  function calculateShippingAmount(){
+      const inputNumberElement = document.querySelector('.js-input-number');
+       const inputValue = Number(inputNumberElement.value);
+      if(inputValue < 40){
+       const finalPrice =  inputValue + 10;
+       document.querySelector('.js-result').innerHTML = `$${finalPrice}`;
+      }else{
+         const finalPrice =  inputValue ;
+         document.querySelector('.js-result').innerHTML = `$${finalPrice}`;
+      }
+
+  }
+
+  </script>
+</body>
+</html>
